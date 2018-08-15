@@ -1,0 +1,3 @@
+[submodule "bf-shared"]
+	path = bf-shared
+	url = https://github.com/bitfixer/bf-shared.git
