@@ -6,7 +6,6 @@
 //  Copyright © 2018 Michael Hill. All rights reserved.
 //
 
-#include "ssdtest.h"
 #include "SSD1306.h"
 #include "wPiGPIO.h"
 #include "wPiSPI.h"
