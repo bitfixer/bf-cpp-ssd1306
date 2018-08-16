@@ -21,11 +21,12 @@
 #include <string.h>
 #include "bf-gpio.h"
 #include "bf-spi.h"
+#include "gfx.h"
 
 #define SSD1306_EXTERNALVCC 0x1
 #define SSD1306_SWITCHCAPVCC 0x2
 
-class SSD1306 {
+class SSD1306 : public GFX {
 public:
     virtual ~SSD1306() {}
     

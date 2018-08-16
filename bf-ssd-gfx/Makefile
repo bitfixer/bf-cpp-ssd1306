@@ -1,5 +1,5 @@
 REMOTE := raspberrypi.local
-INCLUDE := -I../Adafruit-GFX-Library -I../Adafruit-GFX-Library/Fonts
+INCLUDE := -I. -I../Adafruit-GFX-Library -I../Adafruit-GFX-Library/Fonts
 
 %.o : %.cpp
 	g++ -DARDUINO=100 -DPROGMEM= -std=c++11 $(INCLUDE) -c $^
