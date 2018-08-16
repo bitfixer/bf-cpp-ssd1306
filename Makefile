@@ -13,6 +13,7 @@ ssdtest: SSD1306.a
 	bf-shared/Image.cpp \
 	bf-shared/Ditherer.cpp \
 	bf-shared/bf-rpi-io/bf-rpi-io.a \
+	bf-ssd-gfx/bf-ssd-gfx.a \
 	$^
 
 clean:
