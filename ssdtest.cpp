@@ -12,6 +12,7 @@
 #include "wiringPi.h"
 #include "Image.hpp"
 #include "Ditherer.hpp"
+#include "ssd-gfx.h"
 
 unsigned char bw_colors[] =
 {
@@ -31,6 +32,7 @@ int main(int argc, char** argv)
     ssd->begin();
     ssd->clear();
     
+    /*
     Image pic(fopen("max2.ppm", "rb"));
     Palette bwPalette(bw_colors, num_bw_colors);
     Ditherer* ditherer = Ditherer::createFloydSteinbergDitherer();
@@ -50,6 +52,11 @@ int main(int argc, char** argv)
             }
         }
     }
+    */
+
+    SSDGFX* gfx = new SSDGFX(128, 64, ssd);
+    gfx->drawCircle(64, 40, 10, 65535);
+
     ssd->display();
     
     /*

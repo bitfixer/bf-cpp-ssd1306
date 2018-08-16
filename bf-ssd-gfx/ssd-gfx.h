@@ -21,6 +21,6 @@ public:
 
 private:
 	GFX* _gfx;
-}
+};
 
 #endif
