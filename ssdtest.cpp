@@ -13,6 +13,7 @@
 #include "Image.hpp"
 #include "Ditherer.hpp"
 #include "ssd-gfx.h"
+#include "Org_01.h"
 
 unsigned char bw_colors[] =
 {
@@ -56,7 +57,10 @@ int main(int argc, char** argv)
 
     SSDGFX* gfx = new SSDGFX(128, 64, ssd);
     gfx->drawCircle(64, 40, 10, 65535);
-
+    gfx->setFont(&Org_01);
+    gfx->setCursor(20,20);
+    gfx->print((char*)"hello!");
+    
     ssd->display();
     
     /*

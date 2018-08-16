@@ -1,5 +1,5 @@
 REMOTE := raspberrypi.local
-INCLUDE := -I. -I./bf-shared/bf-rpi-io -I./bf-shared -I./bf-ssd-gfx -I./Adafruit-GFX-Library
+INCLUDE := -I. -I./bf-shared/bf-rpi-io -I./bf-shared -I./bf-ssd-gfx -I./Adafruit-GFX-Library -I./Adafruit-GFX-Library/Fonts
 
 %.o : %.cpp
 	g++ -std=c++11 $(INCLUDE) -c $^
