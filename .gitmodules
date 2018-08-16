@@ -1,3 +1,6 @@
 [submodule "bf-shared"]
 	path = bf-shared
 	url = https://github.com/bitfixer/bf-shared.git
+[submodule "Adafruit-GFX-Library"]
+	path = Adafruit-GFX-Library
+	url = https://github.com/adafruit/Adafruit-GFX-Library.git

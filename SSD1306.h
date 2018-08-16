@@ -35,6 +35,12 @@ public:
     virtual void begin(uint8_t vccstate=SSD1306_SWITCHCAPVCC) = 0;
     virtual void reset() = 0;
     virtual void setpixel(int x, int y, uint8_t val) = 0;
+
+    // load bitmap into memory, 1 pixel per byte
+    virtual void loadbitmap(uint8_t* bitmap) {};
+
+    // load image buffer directly into ssd buffer memory. 8 pixels per byte packed
+    virtual void loadimagebuffer(uint8_t* buffer) {};
     virtual void display() = 0;
     virtual void clear() = 0;
     virtual void fill() = 0;
