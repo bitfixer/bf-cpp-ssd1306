@@ -4,7 +4,7 @@
 #include "gfx.h"
 #include "Adafruit_GFX.h"
 
-class SSDGFX
+class SSDGFX : public Adafruit_GFX
 {
 public:
 	SSDGFX(int16_t w, int16_t h, GFX* gfx)
