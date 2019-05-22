@@ -6,6 +6,8 @@
 //  Copyright © 2018 Michael Hill. All rights reserved.
 //
 
+#include <stdio.h>
+#include <stdlib.h>
 #include "SSD1306.h"
 #include "wPiGPIO.h"
 #include "wPiSPI.h"
@@ -26,9 +28,10 @@ int num_bw_colors = 2;
 int main(int argc, char** argv)
 {
     GPIO* gpio = WiringPiGPIO::NewWiringPiGPIO();
-    SPI* spi = WiringPiSPI::NewWiringPiSPI();
+    SPI* spi = WiringPiSPI::NewWiringPiSPI(1, gpio, 2);
+    spi->set_clock_hz(atoi(argv[2]));
     
-    SSD1306* ssd = SSD1306::NewSSD1306_128_64(0, 4, gpio, spi);
+    SSD1306* ssd = SSD1306::NewSSD1306_128_64(1, 4, gpio, spi);
     
     ssd->begin();
     ssd->clear();
@@ -59,7 +62,7 @@ int main(int argc, char** argv)
     gfx->drawCircle(64, 40, 10, 65535);
     gfx->setFont(&Org_01);
     gfx->setCursor(20,20);
-    gfx->print((char*)"hello!");
+    gfx->print((char*)argv[1]);
     
     ssd->display();
     

@@ -129,7 +129,6 @@ public:
             _gpio->setup(_rst, GPIO::OUT);
         }
         
-        _spi->set_clock_hz(8000000);
         _gpio->setup(_dc, GPIO::OUT);
     }
                 
