@@ -18,14 +18,13 @@
 
 #include "bf-gpio.h"
 #include "bf-spi.h"
+#include "bf-printer.h"
 
-class SSDTerminal 
+class SSDTerminal : public Printer
 {
 public:
     static SSDTerminal* NewSSDTerminal(int dc, GPIO* gpio, SPI* spi);
-
     virtual void clear() = 0;
-    virtual void print(const char* string) = 0;
 };
 
 #endif
