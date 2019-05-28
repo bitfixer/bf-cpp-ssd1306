@@ -24,7 +24,7 @@ public:
             _lines[i] = new char[_cols];
         }
 
-        _ssd = SSD1306::NewSSD1306_128_64(1, _dc, _gpio, _spi);
+        _ssd = SSD1306::NewSSD1306_128_64(-1, _dc, _gpio, _spi);
         _gfx = new SSDGFX(128, 64, _ssd);
         _gfx->setFont(&Org_01);
 
