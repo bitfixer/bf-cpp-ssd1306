@@ -4,6 +4,9 @@ INCLUDE := -I. -I../Adafruit-GFX-Library -I../Adafruit-GFX-Library/Fonts
 %.o : %.cpp
 	g++ -DARDUINO=100 -DPROGMEM= -std=c++11 $(INCLUDE) -c $^
 
+Adafruit_GFX.o: ../Adafruit-GFX-Library/Adafruit_GFX.cpp
+	g++ -DARDUINO=100 -DPROGMEM= -std=c++11 $(INCLUDE) -c $^
+
 bf-ssd-gfx.a: Adafruit_GFX.o
 	ar rcs $@ $^
 
