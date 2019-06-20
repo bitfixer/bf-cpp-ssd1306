@@ -68,6 +68,16 @@ public:
     {
         
     }
+
+    void read(uint8_t* buffer, int size)
+    {
+
+    }
+
+    void set_chipselect(GPIO* gpio, int cs)
+    {
+
+    }
 };
 
 class DummyGPIO : public GPIO
@@ -86,6 +96,11 @@ public:
     void set_high(int pin)
     {
         
+    }
+
+    int read(int pin)
+    {
+        return 0;
     }
 };
 
