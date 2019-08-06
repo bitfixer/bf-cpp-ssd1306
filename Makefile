@@ -1,6 +1,9 @@
-REMOTE := raspberrypi.local
 INCLUDE := -I. -I./bf-shared/bf-rpi-io -I./bf-shared -I./bf-ssd-gfx -I./Adafruit-GFX-Library -I./Adafruit-GFX-Library/Fonts
 SOURCES := ssdtest.cpp bf-shared/Image.cpp bf-shared/Ditherer.cpp
+
+dep:
+	git submodule init
+	git submodule update
 
 %.o : %.cpp
 	g++ -std=c++11 -DARDUINO=100 -DPROGMEM= $(INCLUDE) -c $^
@@ -28,8 +31,3 @@ ssdterminal_test: ssdterminal_test.cpp ssdterminal.a
 
 clean:
 	rm -f *.o *.a
-
-transfer:
-	scp *.cpp pi@$(REMOTE):~/bf-cpp-ssd1306/
-	scp *.h pi@$(REMOTE):~/bf-cpp-ssd1306/
-	scp Makefile pi@$(REMOTE):~/bf-cpp-ssd1306/
